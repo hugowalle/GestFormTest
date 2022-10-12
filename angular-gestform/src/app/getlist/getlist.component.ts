@@ -1,39 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-getlist',
   templateUrl: './getlist.component.html',
   styleUrls: ['./getlist.component.css']
 })
+@Injectable({
+  providedIn: 'root'
+})
+
 export class GetlistComponent implements OnInit {
   processed_list!:string;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
-
-  async call_back(content:string): Promise<void> {
-    let myUrl = 'http://127.0.0.1:8000/process_list'
-    console.log(content);
-
-    
-
-    const response = await fetch(myUrl, {
-      method: 'POST',
-      body: content,
-      headers: {'Content-Type': "application/x-www-form-urlencoded; charset=UTF-8"},
-      mode: 'no-cors',
+  
+  call_back(list_send:string): Observable<any> {
+    let myUrl = 'http://127.0.0.1:8000/process_list/'
+    let content = {
+      'list_send':list_send
+    }
+    const headers = new HttpHeaders({
+      'Access-Control-Allow-Origin':'*'
     });
-    
-    if (!response.ok) { 
-      console.log('no response'); 
-    }
-
-    if (response.body !== null) {
-
-      this.processed_list= JSON.stringify(response.json());
-      console.log(response.body);
-    }
+    headers.append('Content-Type','application/json');
+    console.log(myUrl,content)
+    return this.http.post(myUrl,content,{'headers':headers, observe:'response'});
+  }
+  test(send:string){
+    this.call_back(send).subscribe((response:any)=>{
+      this.processed_list = response.body
+    })
   }
 }
