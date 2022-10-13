@@ -8,9 +8,7 @@ Solution du test GestForm:
 * Avoir Node.js 16.x
 * Avoir npm 8.x
 * `npm install -g @angular/cli`
-* Avoir fastApi
-* Avoir uvicorn (`pip install "uvicorn[standard]"`)
-* Installer toutes les librairies : `pip install -r requirement.txt`
+* Installer le reste des librairies : `pip install -r requirement.txt`
 
 ## Lancement
 Lancer tout d'abord le serveur backend en vous placant dans backend/src:
