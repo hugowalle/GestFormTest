@@ -1,4 +1,8 @@
-<p>Entrez une liste de nombres compris entre -1000 et 1000 :</p>
-<input id="input_maliste" type="text" placeholder="Entrez une suite de nombres entre -1000 et 1000 séparés par des virgules" #in_list>
-<button (click)="test(in_list.value)">Traiter</button>
+<p>
+    <strong>Entrez une liste de nombres compris entre -1000 et 1000 séparés par des virgules :</strong><br>
+    <input id="input_mylist" onKeypress="this.style.width = ((this.value.length+1) * 8) + 'px';" 
+    type="text" placeholder="Entrez la liste" #in_list>
+    <button (click)="test(in_list.value)">Traiter</button>
+</p>
+<p>{{error_check}}</p>
 <p>{{processed_list}}</p>
