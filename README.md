@@ -20,13 +20,13 @@ Puis lancer la page web en vous placant dans angular-gestform:
 ```bash
     ng serve -o
 ```
-Ou alors vous pouvez lancer "gestform.bat" sur windows, ou "gestform.sh" sur Linux afin de tout lancer automatiquement
+Ou alors vous pouvez lancer "gestform.bat" sur windows, ou "gestform.sh" sur Linux afin de lancer le tout automatiquement
 
 ## Utilisation
-Les serveurs lancés vous aurez la page lancée dans votre navigateur.
-Rentrez alors une liste de nombres compris entre -1000 et 1000 séparés par des virgules.
-Appuyez sur le bouton "Traiter".
-S'affichera alors plus bas la liste ayant été traitée.
+* Les serveurs lancés vous aurez la page lancée dans votre navigateur.
+* Rentrez alors une liste de nombres compris entre -1000 et 1000 séparés par des virgules.
+* Appuyez sur le bouton "Traiter".
+* S'affichera alors plus bas la liste ayant été traitée.
 
 
 
